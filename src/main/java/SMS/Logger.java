@@ -16,6 +16,7 @@ public class Logger {
                 String timeStamp = LocalDateTime.now().format(formatter);
                 pw.println(timeStamp + " - " + message);
             } catch (Exception e) {
+
             e.printStackTrace();
         }
     }
