@@ -28,8 +28,18 @@ public class Main {
             e.printStackTrace();
         }
 
-        Scanner scanner = new Scanner(System.in);
-        MainMenu mainMenu = new MainMenu(studentService, scanner);
-        mainMenu.displayMenu();
+        boolean noUI = false;
+        for (String arg : args) {
+            if ("--noui".equals(arg)) {
+                noUI = true;
+                break;
+            }
+        }
+
+        if (!noUI) {
+            Scanner scanner = new Scanner(System.in);
+            MainMenu mainMenu = new MainMenu(studentService, scanner);
+            mainMenu.displayMenu();
+        }
     }
 }
